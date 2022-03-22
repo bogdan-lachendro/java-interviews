@@ -1,31 +1,14 @@
 package com.java.examples.domain;
 
+import lombok.Data;
+import lombok.experimental.Accessors;
+
+@Accessors(chain = true)
+@Data
 public class Associate {
-    public String id;
-    public String nm;
-    public String associatesRole;
-    private String leastSalary;
-    private String mostSalary;
-
-    public Associate() {
-    }
-
-    public Associate(String theId, String theName, String role, String leastSalary, String mostSalary) {
-        id = theId;
-        nm = theName;
-        role = role;
-        leastSalary = leastSalary;
-        mostSalary = mostSalary;
-    }
-
-    @Override
-    public String toString() {
-        return "Associate{" +
-                "id='" + id + '\'' +
-                ", nm='" + nm + '\'' +
-                ", associatesRole='" + associatesRole + '\'' +
-                ", leastSalary='" + leastSalary + '\'' +
-                ", mostSalary='" + mostSalary + '\'' +
-                '}';
-    }
+    private String id;
+    private String name;
+    private Role role;
+    private int minimumSalary;
+    private int maximumSalary;
 }
